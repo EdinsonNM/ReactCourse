@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>React Primer alcance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<style>
+    .container{
+        background-color: red;
+    }
+</style>
+<body>
+    <div id="root"></div>
+</body>
+<script type="text/babel">
+    const rootElement = document.getElementById("root");
+    /*
+    const rootElement = document.getElementById("root");
+    const element = document.createElement('div');
+    element.className="container";
+    element.textContent = "Hello World!!";
+    rootElement.appendChild(element);
+    */
+    
+    /* 
+    const element = React.createElement(
+        'div',
+        {className: 'container'},
+        "Hello World!!"
+        );
+    ReactDOM.render(element, rootElement);
+
+    */
+    const content = "Hello World!!!";
+    const classContainer = "container";
+    const props = {
+        children: "Hello World!!! jojo",
+        className: "container"
+    }
+    const Message = (props) => <div>{props.msg} {props.title}</div>
+    const propTypes = {
+        string (props, propName, componentName){
+            if(typeof props[propName] !== 'string'){
+                return new Error(`"${propName}" deberia ser un string`);
+            }
+        },
+    }
+    Message.propTypes = {
+        msg: propTypes.string,
+        title: propTypes.string
+    }
+    const element = <div>
+        <Message msg={"jojo"}/>
+        <Message msg="mundo"title={true}/>
+    </div>;
+    ReactDOM.render(element, rootElement);
+</script>
+</html>
