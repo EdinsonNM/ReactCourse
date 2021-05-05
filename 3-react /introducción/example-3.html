@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>React Primer alcance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+</head>
+<style>
+    .container{
+        background-color: red;
+    }
+</style>
+<body>
+    <div id="root"></div>
+</body>
+<!-- Babel es una herramienta que nos permite transformar nuestro código JS de última generación (o con funcionalidades extras) a un código de Javascript que cualquier navegador o versión de Node.js pueda entender. -->
+<script type="text/babel">
+    const rootElement = document.getElementById("root");
+
+
+    const Message = (props) => <div className="container">{props.msg} {props.title}</div>
+
+    const element = <div>
+        <Message msg={"hola"}/>
+        <Message msg="mundo"title={true}/>
+    </div>;
+    ReactDOM.render(element, rootElement);
+</script>
+</html>

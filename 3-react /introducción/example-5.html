@@ -15,29 +15,12 @@
 </body>
 <script type="text/babel">
     const rootElement = document.getElementById('root');
-    /*const element = document.createElement('div');
-    element.textContent = "Hola mundo";
-    element.className ="container";
-    rootElement.appendChild(element);
-*/
 
-    const Message = (props) =><div>{props.msg}</div>;
-    /*
-    const PropTypes = {
-        string(props, propName, componentName){
-            if(typeof props[propName] !== 'string'){
-                return new Error(`${propName} debería ser un string`)
-            }
-        }
-    } */
+    const TikTok = (props)=><div>La hora es {props.time}</div>;
+
     function tick(){
         const time = new Date().toLocaleTimeString();
-        const element = `
-            <div>
-                La hora es ${time}
-            </div>`;
-        rootElement.innerHTML = element;
-        //ReactDOM.render(element, rootElement);
+        ReactDOM.render(<TikTok time={time}/>, rootElement);
     }
     tick();
     setInterval(tick, 1000);

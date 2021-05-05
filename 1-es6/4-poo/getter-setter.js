@@ -1,6 +1,6 @@
 class Pelota {
     get nombre(){
-        this._nombre;
+        return this._nombre;
     }
     set nombre(value){
         this._nombre;

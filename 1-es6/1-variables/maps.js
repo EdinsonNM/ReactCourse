@@ -1,3 +1,6 @@
+/**
+ * es una colección de elementos de datos con clave, como un objeto. Pero la principal diferencia es que Map permite claves de cualquier tipo.
+ */
 var fruta = new Map();
 
 fruta.set("nombre", "Manzana");

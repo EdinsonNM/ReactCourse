@@ -1,3 +1,6 @@
+/**
+ * es usado para computaciones asíncronas. Una promesa representa un valor que puede estar disponible ahora, en el futuro, o nunca.
+ */
 var promesa = new Promise(function(resolve, reject){
     var frutas = ["manzana", "pera", "uva"];
     var contador = 0;
